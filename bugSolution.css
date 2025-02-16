@@ -1,0 +1,15 @@
+/*
+ * Solution: In some cases, restructuring the CSS to avoid directly combining percentages and viewport units within calc() might resolve the issue.
+ * Consider using variables or intermediate calculations to separate the percentage-based and viewport-based components.
+ */
+
+.element {
+  width: calc(50vw + 20%); /* Problematic calculation */
+  /* Possible solution (depending on the desired outcome): */
+  /* width: 50vw; 
+     margin-left: 10%; margin-right: 10%; */
+  /* Or using variables for better readability: */
+  /* --viewport-width: 50vw;
+  --percentage-width: 20%;
+  width: calc(var(--viewport-width) + var(--percentage-width)); */
+}
